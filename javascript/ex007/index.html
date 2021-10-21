@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício de JavaScipt</title>
+    <style>
+        main {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        #especialbox {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <h1>Interaja com os botões</h1>
+            <button onclick="esconde()">Esconder</button>
+            <button onclick="exibe()">Exibir</button>
+        </section>
+        <section id="especialbox">
+            <h1>Caixa Especial 👀</h1>
+        </section>
+    </main>
+
+    <script>
+        let espbox = document.getElementById("especialbox")
+        function esconde() {
+            espbox.style.display = "none"
+        }
+        function exibe() {
+            espbox.style.display = "block"
+        }
+    </script>
+</body>
+</html>
