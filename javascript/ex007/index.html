@@ -6,25 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercício de JavaScipt</title>
     <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+            height: 100%;
+            background-image: linear-gradient(black, purple, purple, black);
+        }
         main {
             font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
+        section {
+            background-color: white;
+            width: 350px;
+            display: block;
+            margin: auto;
+            padding: 15px;
+            border-radius: 15px;
+            color: rgb(66, 1, 66);
+        }
         #especialbox {
             display: none;
+        }
+        button {
+            background-image: linear-gradient(purple, black, purple);
+            color: white;
+            padding: 10px;
+            width: 150px;
         }
     </style>
 </head>
 <body>
     <main>
         <section>
-            <h1>Interaja com os botões</h1>
-            <button onclick="esconde()">Esconder</button>
-            <button onclick="exibe()">Exibir</button>
+            <center>
+                <h1>Interaja com os botões</h1>
+                <button onclick="esconde()">Esconder</button>
+                <button onclick="exibe()">Exibir</button>
+            </center>
         </section>
+        <br>
         <section id="especialbox">
-            <h1>Caixa Especial 👀</h1>
-        </section>
-    </main>
+            <center>
+                <h1>Caixa Especial 👀</h1>
+            </center>
 
     <script>
         let espbox = document.getElementById("especialbox")
