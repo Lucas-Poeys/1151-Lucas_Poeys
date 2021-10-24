@@ -6,11 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercício de JavaScript</title>
     <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+            height: 100%;
+            background-image: linear-gradient(black, rgb(103, 103, 236));
+        }
         main {
             font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
+        section {
+            display: block;
+            margin: auto;
+            background-color: white;
+            width: 320px;
+            padding: 15px;
+            border-radius: 15px;
+        }
+        h1 {
+            color: rgb(3, 3, 160);
+        }
         #resultbox {
             display: none;
+        }
+        #button {
+            display: block;
+            margin: auto;
+            background-color: rgb(3, 3, 75);
+            color: white;
+            padding: 8px;
+            width: 300px;
+        }
+        button {
+            display: block;
+            margin: auto;
+            background-color: rgb(3, 3, 75);
+            color: white;
+            padding: 8px;
+            width: 300px;
         }
     </style>
 </head>
@@ -25,9 +59,11 @@
                 <label for="n2">Número 2: </label>
                 <input type="number" name="n2" id="n2" min="1" max="100" value="1">
                 <br>
-                <input type="submit" value="Calcular">
+                <br>
+                <input type="submit" value="Calcular" id="button">
             </form>
         </section>
+        <br>
         <section id="resultbox">
             <h1>Analisando os números</h1>
             <p id="resultado"></p>
