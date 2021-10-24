@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício de JavaScript</title>
+</head>
+<body>
+    <main>
+        <h1>Data e Hora</h1>
+        <button onclick="dados()">Aperte aqui</button>
+        <p id="resultado">A data e hora do sistema vão aparecer...</p>
+    </main>
+
+    <script>
+        function dados() {
+            let calendario = new Date()
+            let dia = calendario.getDate()
+            let meses = ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"]
+            let mes = meses[calendario.getMonth()]
+            let ano = calendario.getFullYear()
+            let diasdsem = ["Domingo","Segunda","Terça","Quarta","Quinta","Sexta","Sábado"]
+            let dsem = diasdsem[calendario.getDay()]
+            let hora = calendario.getHours()
+            let minuto = calendario.getMinutes()
+            let segundo = calendario.getSeconds()
+            let res = document.getElementById("resultado")
+            res.innerHTML = `Dia: ${dia}
+            <br>
+            Mês: ${mes}
+            <br>
+            Ano: ${ano}
+            <br>
+            Dia da Semana: ${dsem}
+            <br>
+            Horas: ${hora}
+            <br>
+            Minutos: ${minuto}
+            <br>
+            Segundos: ${segundo}`
+        }
+    </script>
+</body>
+</html>
