@@ -6,6 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercício JavaScript</title>
     <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+            height: 100%;
+            background-image: linear-gradient(rgb(255, 47, 82), rgb(255, 72, 0));
+        }
+        section {
+            display: block;
+            margin: auto;
+            background-color: white;
+            width: 300px;
+            padding: 15px;
+            border-radius: 15px;
+        }
+        h1 {
+            color: rgb(172, 2, 2);
+        }
+        #button {
+            display: block;
+            margin: auto;
+            background-color: tomato;
+            color: white;
+            padding: 8px;
+            width: 200px;
+        } 
+        button {
+            display: block;
+            margin: auto;
+            background-color: tomato;
+            color: white;
+            padding: 8px;
+            width: 200px;
+        }                                                                           
         main {
             font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
@@ -20,12 +54,13 @@
             <h1>Identifique-se</h1>
             <form action="nada.php" method="get" onsubmit="return analise()">
                 <label for="nome">Nome: </label>
-                <input type="text" name="nome" id="nome">
+                <input type="text" name="nome" id="nome" size="22">
                 <br>
                 <label for="ano">Ano de Nascimento: </label>
                 <input type="number" name="ano" id="ano" min="1900" max="2021" value="2000">
                 <br>
-                <input type="submit" value="Analisar">
+                <br>
+                <input type="submit" value="Analisar" id="button">
             </form>
         </section>
         <br>
