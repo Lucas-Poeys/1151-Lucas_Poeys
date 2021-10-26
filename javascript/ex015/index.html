@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício JavaScript</title>
+    <style>
+        main {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        #resultbox {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <h1>Quanta tinta devo comprar?</h1>
+            <p>Coloque a seguir as dimensões da parede e eu vou calcular quantos litros de tinta você precisar comprar, sabendo que cada litro consegue cobrir uma área de 2m<sup>2</sup>.</p>
+            <form action="nada.php" method="get" onsubmit="return calc()">
+                <label for="largura">Largura: </label>
+                <input type="number" name="largura" id="largura" min="1" max="100" value="5">m 
+                <label for="altura">Altura: </label>
+                <input type="number" name="altura" id="altura" min="1" max="100" value="5">m 
+                <input type="submit" value="calcular">
+            </form>
+        </section>
+        <br>
+        <section id="resultbox">
+            <h1>Cálculo de Tinta</h1>
+            <p id="resultadoarea"></p>
+            <p id="resultadotinta"></p>
+            <button onclick="ocult()">Fechar</button>
+        </section>
+    </main>
+
+    <script>
+        let resbox = document.getElementById("resultbox")
+        function calc() {
+            let larg = Number(document.getElementById("largura").value)
+            let alt = Number(document.getElementById("altura").value)
+            let resarea = document.getElementById("resultadoarea")
+            let restinta = document.getElementById("resultadotinta")
+            let area = larg * alt
+            resbox.style.display = "block"
+            resarea.innerHTML = `Uma parede de ${larg}x${alt} metros vai ter uma <strong>área total de ${area}m<sup>2</sup>.</strong>`
+            restinta.innerHTML = `Para cobrir essa area, será nescessário um total de <strong>${area / 2} litros</strong> de tinta.`
+            return false
+        }
+        function ocult() {
+            resbox.style.display = "none"
+        }
+    </script>
+</body>
+</html>
