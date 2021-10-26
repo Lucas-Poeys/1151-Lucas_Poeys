@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício JavaScript</title>
+    <style>
+        main {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        #resultbox {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <h1>Reajuste Salarial</h1>
+            <p>Uma empresa precisa de ajuda para calcular os novos salários dos seus funcionários, que receberão um aumento de 5%, 10% ou 20%.</p>
+            <form action="nada.php" method="get" onsubmit="return calc()">
+                <label for="nome">Nome do Funcionário: </label>
+                <input type="text" name="nome" id="nome">
+                <br>
+                <label for="salario">Salário: R$</label>
+                <input type="number" name="salario" id="salario" min="1100" max="20000" value="1100" step="0.5">
+                <br>
+                <label for="reajuste">Reajuste: </label>
+                <select name="reajuste" id="reajuste">
+                    <option value="5">5% de aumento</option>
+                    <option value="10">10% de aumento</option>
+                    <option value="20">20% de aumento</option>
+                </select>
+                <br>
+                <br>
+                <input type="submit" value="Reajustar" id="button">
+            </form>
+        </section>
+        <br>
+        <section id="resultbox">
+            <h1>Novo salário do Funcionário</h1>
+            <p id="resultado"></p>
+            <button onclick="ocult()">Fechar</button>
+        </section>
+    </main>
+
+    <script>
+        let resbox = document.getElementById("resultbox")
+        function calc() {
+            let nome = document.getElementById("nome").value 
+            let sal = Number(document.getElementById("salario").value)
+            let porc = Number(document.getElementById("reajuste").value)
+            let reaj = (porc * sal) / 100
+            let res = document.getElementById("resultado")
+            resbox.style.display = "block"
+            res.innerHTML = `O funcionário <strong>${nome}</strong> tinha o salário de R$${(sal).toFixed(2)}. Com um aumento de ${porc}%, o salário vai aumentar ${(reaj).toFixed(2)} e vai passar a ser de <strong>R$${(sal + reaj).toFixed(2)}</strong> `
+            return false
+        }
+        function ocult() {
+            resbox.style.display = "none"
+        }
+    </script>
+</body>
+</html>
