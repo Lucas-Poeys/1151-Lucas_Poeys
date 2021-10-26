@@ -6,8 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercício JavaScript</title>
     <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+            height: 100%;
+            background-image: linear-gradient(black, blue, aqua, black);
+        }
         main {
             font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        section {
+            display: block;
+            margin: auto;
+            background-color: white;
+            width: 400px;
+            padding: 15px;
+            border-radius: 15px;
+        }
+        h1 {
+            color: rgb(1, 90, 71);
+        }
+        #button {
+            display: block;
+            margin: auto;
+            background-image: linear-gradient(to right, blue, aqua, black, black, aqua, blue);
+            color: white;
+            padding: 10px;
+            width: 300px;
+        }
+        button {
+            display: block;
+            margin: auto;
+            background-image: linear-gradient(to right, blue, aqua, black, black, aqua, blue);
+            color: white;
+            padding: 10px;
+            width: 300px;
         }
         #resultbox {
             display: none;
@@ -33,9 +67,11 @@
                     <option value="30">30%</option>
                 </select>
                 <br>
-                <input type="submit" value="Calcular">
+                <br>
+                <input type="submit" value="Calcular" id="button">
             </form>
         </section>
+        <br>
         <section id="resultbox">
             <h1>Resultado</h1>
             <p id="resultado"></p>
