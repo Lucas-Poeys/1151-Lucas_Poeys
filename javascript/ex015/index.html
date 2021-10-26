@@ -6,6 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercício JavaScript</title>
     <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+            height: 100%;
+            background-image: linear-gradient(to right, red, orange, yellow);
+        }
+        section {
+            display: block;
+            margin: auto;
+            background-color: white;
+            width: 380px;
+            padding: 15px;
+            border-radius: 15px;
+        }
+        h1 {
+            color: brown;
+        }
+        #button {
+            background-image: linear-gradient(tomato, orange);
+            color: white;
+            padding: 10px;
+            width: 280px;
+        }
+        button {
+            display: block;
+            margin: auto;
+            background-image: linear-gradient(tomato, orange);
+            color: white;
+            padding: 10px;
+            width: 280px;
+        }
         main {
             font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
@@ -19,13 +51,17 @@
         <section>
             <h1>Quanta tinta devo comprar?</h1>
             <p>Coloque a seguir as dimensões da parede e eu vou calcular quantos litros de tinta você precisar comprar, sabendo que cada litro consegue cobrir uma área de 2m<sup>2</sup>.</p>
-            <form action="nada.php" method="get" onsubmit="return calc()">
-                <label for="largura">Largura: </label>
-                <input type="number" name="largura" id="largura" min="1" max="100" value="5">m 
-                <label for="altura">Altura: </label>
-                <input type="number" name="altura" id="altura" min="1" max="100" value="5">m 
-                <input type="submit" value="calcular">
-            </form>
+            <center>
+                <form action="nada.php" method="get" onsubmit="return calc()">
+                    <label for="largura">Largura: </label>
+                    <input type="number" name="largura" id="largura" min="1" max="100" value="5">m
+                    <label for="altura">Altura: </label>
+                    <input type="number" name="altura" id="altura" min="1" max="100" value="5">m
+                    <br>
+                    <br>
+                    <input type="submit" value="Calcular" id="button">
+                </form>
+            </center>
         </section>
         <br>
         <section id="resultbox">
