@@ -6,6 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercício JavaScript</title>
     <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+            height: 100%;
+            background-image: linear-gradient(blue, black, white, black, blue);
+        }
+        section {
+            display: block;
+            margin: auto;
+            background-color: white;
+            width: 300px;
+            padding: 15px;
+            border-radius: 15px;
+        }
+        h1 {
+            color: rgb(2, 2, 189);
+        }
+        #button {
+            display: block;
+            margin: auto;
+            background-color: rgb(43, 43, 179);
+            color: white;
+            padding: 8px;
+            width: 200px;
+        }
+        button {
+            display: block;
+            margin: auto;
+            background-color: rgb(43, 43, 179);
+            color: white;
+            padding: 8px;
+            width: 200px;
+        }
         main {
             font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
@@ -28,9 +62,11 @@
                 <label for="nota2">Nota 2: </label>
                 <input type="number" name="nota2" id="nota2" min="0" max="10" value="5" step="0.5">
                 <br>
-                <input type="submit" value="Calcular Média">
+                <br>
+                <input type="submit" value="Calcular Média" id="button">
             </form>
         </section>
+        <br>
         <section id="resultbox">
             <h1>Resultado</h1>
             <p id="resultado"></p>
