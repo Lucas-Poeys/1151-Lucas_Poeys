@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício JavaScript</title>
+    <style>
+        main {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        #resultbox {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <h1>Pare de fumar 🚭</h1>
+            <p>Cigarro MATA! Segundo uma pesquisa, cada cigarro fumado reduz 10 min de vida de um ser humano. Vamos fazer a conta?</p>
+            <form action="nada.php" method="get" onsubmit="return calc()">
+                <label for="cigpordia">Quantos cigarros fuma por dia? </label>
+                <input type="number" name="cigpordia" id="cigpordia" min="0" max="50" value="1">
+                <br>
+                <label for="fumanos">Fumante há quantos anos? </label>
+                <input type="number" name="fumanos" id="fumanos" min="0" max="50" value="1">
+                <br>
+                <br>
+                <input type="submit" value="Calcular" id="button">
+            </form>
+        </section>
+        <br>
+        <section id="resultbox">
+            <h1>Cálculo da Morte 💀</h1>
+            <p id="resultado"></p>
+            <button onclick="ocult()">Fechar</button>
+        </section>
+    </main>
+
+    <script>
+        let resbox = document.getElementById("resultbox")
+        function calc() {
+            let cpd = Number(document.getElementById("cigpordia").value)
+            let fa = Number(document.getElementById("fumanos").value)
+            let res = document.getElementById("resultado")
+            let min = fa * 365 * cpd
+            let horas = min / 60
+            let dias = horas / 24
+            resbox.style.display = "block"
+            res.innerHTML = `Uma pessoa que fuma ${cpd} cigarros por dia, há ${fa} anos já <strong>perdeu ${(horas).toFixed(0)} horas de vida!</strong> Isso corresponde a ${(dias).toFixed(1)} dias a menos.`
+            return false
+        }
+        function ocult() {
+            resbox.style.display = "none"
+        }
+    </script>
+</body>
+</html>
