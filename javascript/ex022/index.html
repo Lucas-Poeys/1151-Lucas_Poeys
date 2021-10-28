@@ -77,12 +77,13 @@
             let n1 = Number(document.getElementById("num1").value)
             let n2 = Number(document.getElementById("num2").value)
             let res = document.getElementById("resultado")
+            let divisao = Math.floor(n1 / n2)
             resbox.style.display = "block"
             if (n1 % n2 == 0) {
-                res.innerHTML = `O número ${n1} <strong>é divisível</strong> por ${n2}, já que ${n1} ÷ ${n2} = ${n1 / n2} e com <strong>resto 0</strong>.`
+                res.innerHTML = `O número ${n1} <strong>é divisível</strong> por ${n2}, já que ${n1} ÷ ${n2} = ${divisao} e com <strong>resto 0</strong>.`
             }
             else {
-                res.innerHTML = `O número ${n1} <strong>NÃO É divisível</strong> por ${n2}, já que ${n1} ÷ ${n2} = ${(n1 / n2).toFixed(0)} e com <strong>resto ${n1 % n2}</strong>.`
+                res.innerHTML = `O número ${n1} <strong>NÃO É divisível</strong> por ${n2}, já que ${n1} ÷ ${n2} = ${divisao} e com <strong>resto ${n1 % n2}</strong>.`
             }
             return false 
         }
