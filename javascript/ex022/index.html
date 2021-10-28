@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício JavaScript</title>
+    <style>
+        main {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        #resultbox {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <h1>É divisível?</h1>
+            <form action="nada.php" method="get" onsubmit="return calc()">
+                Será que o número <input type="number" name="num1" id="num1" min="0" max="100" value="1"> é divisível por <input type="number" name="num2" id="num2" min="0" max="100" value="1">?
+                <br>
+                <br>
+                <input type="submit" value="Verificar" id="button">
+            </form>
+        </section>
+        <br>
+        <section id="resultbox">
+            <h1>Resultado</h1>
+            <p id="resultado"></p>
+            <button onclick="ocult()">Fechar</button>
+        </section>
+    </main>
+
+    <script>
+        let resbox = document.getElementById("resultbox")
+        function calc() {
+            let n1 = Number(document.getElementById("num1").value)
+            let n2 = Number(document.getElementById("num2").value)
+            let res = document.getElementById("resultado")
+            resbox.style.display = "block"
+            if (n1 % n2 == 0) {
+                res.innerHTML = `O número ${n1} <strong>é divisível</strong> por ${n2}, já que ${n1} ÷ ${n2} = ${n1 / n2} e com <strong>resto 0</strong>.`
+            }
+            else {
+                res.innerHTML = `O número ${n1} <strong>NÃO É divisível</strong> por ${n2}, já que ${n1} ÷ ${n2} = ${(n1 / n2).toFixed(0)} e com <strong>resto ${n1 % n2}</strong>.`
+            }
+            return false 
+        }
+        function ocult() {
+            resbox.style.display = "none"
+        }
+    </script>
+</body>
+</html>
