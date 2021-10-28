@@ -11,7 +11,11 @@
         }
         body {
             height: 100%;
-            background-color: grey;
+            background-image: linear-gradient(grey, whitesmoke, white);
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-size: cover;
+            background-attachment: fixed;
         }
         main {
             display: block;
@@ -20,6 +24,18 @@
             width: 300px;
             padding: 15px;
             border-radius: 15px;
+        }
+        h1 {
+            color: rgb(64, 64, 64);
+        }
+        #button {
+            display: block;
+            margin: auto;
+            background-color: rgb(107, 105, 105);
+            color: white;
+            padding: 8px;
+            width: 200px;
+
         }
     </style>
 </head>
@@ -34,6 +50,7 @@
                 <input type="radio" name="cor" id="vermelho">
                 <label for="vermelho">Vermelho</label>
             </fieldset>
+            <br>
             <input type="submit" value="Escolhido" id="button">
         </form>
     </main>
@@ -41,12 +58,18 @@
     <script>
         function personal() {
             let cor = document.getElementsByName("cor")
+            let titulo = document.querySelector("h1")
+            let botao = document.getElementById("button")
             let fundo = document.body
             if (cor[0].checked) {
-                fundo.style.backgroundColor = "blue"
+                fundo.style.backgroundImage = "linear-gradient(blue, rgb(0, 81, 255), aqua)"
+                titulo.style.color = "rgb(9, 22, 201)"
+                botao.style.backgroundColor = "rgb(4, 54, 148)"
             }
             else {
-                fundo.style.backgroundColor = "red"
+                fundo.style.backgroundImage = "linear-gradient(red,orangered, red)"
+                titulo.style.color = "rgb(129, 2, 2)"
+                botao.style.backgroundColor = "rgb(170, 21, 2)"
             }
             return false
         }
