@@ -6,8 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercício JavaScript</title>
     <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+            height: 100%;
+            background-image: url(imagens/estrada.jpg);
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-size: cover;
+            background-attachment: fixed;
+        }
         main {
             font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        img#foto {
+            width: 100%;
+            border-radius: 15px;
+        }
+        section {
+            display: block;
+            margin: auto;
+            background-color: white;
+            width: 467px;
+            padding: 15px;
+            border-radius: 15px;
+        }
+        #button {
+            background-image: linear-gradient(yellow, black);
+            color: white;
+        }
+        button {
+            background-image: linear-gradient(yellow, black);
+            color: white;
+            display: block;
+            margin: auto;
         }
         #resultbox {
             display: none;
@@ -38,6 +71,7 @@
             <h1>Analisando velocidade</h1>
             <p id="resultado"></p>
             <img src="" alt="status" id="foto">
+            <br>
             <br>
             <button onclick="ocult()">Fechar</button>
         </section>
