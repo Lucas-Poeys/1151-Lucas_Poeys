@@ -39,6 +39,33 @@
             color: white;
             padding: 15px;
         }
+        #button {
+            margin-left: 50px;
+            vertical-align: top;
+            float: left;
+            margin-right: 5px;
+            background-color: #003B87;
+            color: white;
+            padding: 5px;
+        }
+        button {
+            display: inline-block;
+            vertical-align: top;
+            background-color: #003B87;
+            color: white;
+            padding: 5px;
+        }
+        @media print {
+            button, #button, footer {
+                display: none;
+            }
+            main {
+                width: 100%;
+            }
+            img {
+                width: 30%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -60,7 +87,12 @@
         <p>resumo do caso 4</p>
         <img src="exemplo.jpg" alt="exemplo">
         <br>
-        <a href="https://www.eteot.rio.br">Voltar à página inicial</a>
+        <form action="https://www.eteot.rio.br" method="get">
+        <input type="submit" value="Voltar à página inicial" id="button">
+        </form>
+        <button onclick="window.print()">Imprimir</button>
+
+        
     </main>
     <br>
     <footer>
