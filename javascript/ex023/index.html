@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício JavaScript</title>
+    <style>
+        main {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        #resultbox {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <h1>Ano Bissexto</h1>
+            <p>Anos bissextos são aqueles que fazem parte do calendário Gregoriano (a partir de 1582) e possuem um dia a mais (o dia 29 de Fevereiro). As regras para descobrir se um ano é bissexto são:
+            </p>
+            <ol>
+                <li>De 4 em 4 anos é ano bissexto (ex. 1996, 2000, 2012)</li>
+                <li>De 100 em 100 anos não é ano bissexto (ex. 1900)</li>
+                <li>De 400 em 400 anos é ano bissexto (ex. 1600, 2400)</li>
+                <li>Prevalecem as últimas regras sobre as primeiras</li>
+            </ol>
+            <p>Veja mais informações sobre <a href="https://pt.wikipedia.org/wiki/Ano_bissexto">Anos Bissextos.</a></p>
+            <h1>Verifique se um ano é bissexto</h1>
+            <form action="nada.php" method="get" onsubmit="return vrfq()">
+                <label for="ano">Ano: </label>
+                <input type="number" name="ano" id="ano" min="1000" max="2021" value="2000">
+                <input type="submit" value="Verificar" id="button">
+            </form>
+        </section>
+        <br>
+        <section id="resultbox">
+            <h1>Resultado</h1>
+            <p id="resultado"></p>
+            <button onclick="ocult()">Fechar</button>
+        </section>
+    </main>
+
+    <script>
+        let resbox = document.getElementById("resultbox")
+        function vrfq() {
+            let ano = Number(document.getElementById("ano").value)
+            let res = document.getElementById("resultado")
+            resbox.style.display = "block"
+            if ((ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0)) {
+                res.innerHTML = `O ano ${ano} <strong>é bissexto!</strong>`
+            } else {
+                res.innerHTML = `O ano ${ano} <strong>NÃO é bissexto!</strong>`
+            }
+            return false
+        }
+        function ocult() {
+            resbox.style.display = "none"
+        }
+    </script>
+</body>
+</html>
