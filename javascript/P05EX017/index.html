@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Calculadora de Fatorial</title>
+   <style>
+      body {
+         background-image: linear-gradient(rgb(217, 255, 0), rgb(0, 248, 0), rgb(0, 255, 136));
+         background-repeat: no-repeat;
+         background-position: top;
+         background-size: cover;
+         background-attachment: fixed;
+      }
+      main {
+         font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      section {
+         display: block;
+         margin: auto;
+         text-align: center;
+         background-color: white;
+         width: 300px;
+         padding: 15px;
+         border-radius: 15px;
+      }
+      h1 {
+         color: rgb(13, 146, 1);
+      }
+      #button {
+         background-color: rgb(46, 173, 29);
+         color: white;
+      }
+      button {
+         background-color: rgb(46, 173, 29);
+         color: white;
+      }
+      #resultbox {
+         display: none;
+      }
+   </style>
+</head>
+<body>
+   <main>
+      <section>
+         <h1>Calcule o Fatorial</h1>
+         <form action="nada.php" method="get" onsubmit="return fatorial()">
+            <label for="numero">Número: </label>
+            <input type="number" name="numero" id="numero" min="1" max="20" value="1">
+            <input type="submit" value="Calcular Fatorial" id="button">
+         </form>
+      </section>
+      <br>
+      <section id="resultbox">
+         <h1>Resultado</h1>
+         <p id="resultado">O valor do fatorial vai aparecer aqui.</p>
+         <button onclick="ocult()">Fechar</button>
+      </section>
+   </main>
+
+   <script>
+      let resbox = document.getElementById("resultbox")
+      let res = document.getElementById("resultado")
+      
+      function fatorial() {
+         let num = Number(document.getElementById("numero").value)
+         res.innerHTML = `${num}! = `
+         let cont = num
+         let fator = 1
+         while (cont >= 1) {
+            res.innerHTML += `${cont}`
+            if (cont == 1) {
+               res.innerHTML += " = "
+            }
+            else {
+               res.innerHTML += " x "
+            }
+            fator = fator * cont
+            cont--
+         }
+         res.innerHTML += `${fator}`
+         resbox.style.display = "block"
+         return false
+      }
+      function ocult() {
+         resbox.style.display = "none"
+         
+      }
+   </script>
+</body>
+</html>
