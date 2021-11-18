@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercíco JavaScript</title>
+    <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+            background-image: linear-gradient(rgb(119, 0, 255),rgb(0, 102, 255), rgb(0, 255, 115));
+        }
+        main {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        section {
+            display: block;
+            margin: auto;
+            background-color: white;
+            width: 335px;
+            padding: 15px;
+            border-radius: 15px;
+        }
+        #resultbox {
+            display: none;
+        }
+        h1 {
+            color: rgb(1, 1, 126);
+        }
+        #button {
+            background-color: rgb(1, 70, 43);
+            color: white;
+        }
+        button {
+            display: block;
+            margin: auto;
+            background-color: rgb(1, 70, 43);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <h1>Média de idade de grupo</h1>
+            <form action="nada.php" method="get" onsubmit="return media()">
+                <label for="pessoas">Total de pessoas: </label>
+                <input type="number" name="pessoas" id="pessoas" min="1" max="30" value="5">
+                <input type="submit" value="Iniciar" id="button">
+            </form>
+        </section>
+        <br>
+        <section id="resultbox">
+            <p id="resultado"></p>
+            <button onclick="ocult()">Fechar</button>
+        </section>
+    </main>
+    <script>
+        let resbox = document.getElementById("resultbox")
+        function media() {
+            let total = Number(document.getElementById("pessoas").value)
+            let res = document.getElementById("resultado")
+            let c = 1
+            let idade = 0
+            let totidade = 0
+            while (c <= total) {
+                idade = Number(prompt(`Digite a idade da ${c}º pessoa:`))
+                totidade += idade
+                c++
+            }
+            resbox.style.display = "block"
+            res.innerHTML = `No grupo de ${total} pessoas registrado acima, a média de idade é de ${(totidade / total).toFixed(0)} `
+            return false
+        }
+        function ocult() {
+            resbox.style.display = "none"
+        }
+    </script>
+</body>
+</html>
