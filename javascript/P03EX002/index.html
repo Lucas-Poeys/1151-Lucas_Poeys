@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício JavaScript</title>
+    <style>
+        main {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        #resultbox {
+            display: none;
+        }
+        span.tip1 {
+            color: red;
+            font-weight: bolder;
+        }
+        span.tip2 {
+            color: blue;
+            font-weight: bolder;
+        }
+        span.tip3 {
+            color: green;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <h1>Situação dos Alunos</h1>
+            <p>Alunos possuem sua situação definida pela média entre as notas. Consulte a lista a seguir:</p>
+            <ul>
+                <li>Média abaixo de 4,0: Aluno <span class="tip1">REPROVADO</span></li>
+                <li>Média entre 4,0 e 6,9: Aluno <span class="tip2">em RECUPERAÇÃO</span></li>
+                <li>Média 7,0 ou superior: Aluno <span class="tip3">APROVADO</span></li>
+            </ul>
+            <h1>Dados do Aluno</h1>
+            <form action="nada.php" method="get" onsubmit="return sit()">
+                <label for="nome">Nome: </label>
+                <input type="text" name="nome" id="nome" placeholder="Nome do aluno">
+                <br>
+                <label for="n1">1° Nota: </label>
+                <input type="number" name="n1" id="n1" min="0" max="10" step="0.5" value="7">
+                <br>
+                <label for="n2">2° Nota: </label>
+                <input type="number" name="n2" id="n2" min="0" max="10" step="0.5" value="7">
+                <br>
+                <input type="submit" value="Analisar" id="button">
+            </form>
+        </section>
+        <br>
+        <section id="resultbox">
+            <h1>Situação do Aluno</h1>
+            <p id="resultado"></p>
+            <button onclick="ocult()">Fechar</button>
+        </section>
+    </main>
+    <script>
+        let resbox = document.getElementById("resultbox")
+        function sit() {
+            let res = document.getElementById("resultado")
+            let nome = document.getElementById("nome").value
+            let n1 = Number(document.getElementById("n1").value)
+            let n2 = Number(document.getElementById("n2").value)
+            let media = (n1 + n2) / 2
+            resbox.style.display = "block"
+            res.innerHTML = `O aluno ${nome} obteve <strong>média ${media}</strong> e por conta disso está `
+            if (media < 4) {
+                res.innerHTML += `<span class="tip1">REPROVADO</span>`
+            }
+            else if (media >= 4 && media <= 6.9) {
+                res.innerHTML += `<span class="tip2">em RECUPERAÇÃO</span>` 
+            }
+            else {
+                res.innerHTML += `<span class="tip3">APROVADO</span>`
+            }
+            return false
+        }
+    </script>
+</body>
+</html>
